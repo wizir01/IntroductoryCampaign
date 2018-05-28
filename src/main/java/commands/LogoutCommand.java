@@ -8,7 +8,7 @@ import java.io.IOException;
 public class LogoutCommand implements ICommand {
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getSession().invalidate();
+        request.getSession().setAttribute("user", null);
         return "/view/login.jsp";
     }
 }

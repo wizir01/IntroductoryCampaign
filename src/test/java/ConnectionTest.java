@@ -1,20 +1,15 @@
-import dao.ConnectionProxy;
-import dao.DBParser;
-import dao.TransactionManager;
+import dao.*;
 import datasourse.DataSource;
 import factory.DaoFactory;
 import factory.ServiceFactory;
-import model.Department;
-import model.Subject;
+import model.*;
+import notification.MessageSender;
 import org.apache.logging.log4j.Logger;
-import model.User;
 import org.apache.logging.log4j.LogManager;
-import service.DepartmentService;
-import service.UserService;
+import service.*;
 
 import java.sql.*;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class ConnectionTest {
 
@@ -42,8 +37,15 @@ public class ConnectionTest {
 //    }
 
     public static void main(String[] args) {
-        List<Subject> subjects = ServiceFactory.getInstance().getSubjectService().getAll();
-        System.out.println(subjects);
+//        IDepartmentRequirementService departmentRequirementService = ServiceFactory.getInstance().getDepartmentRequirementService();
+        IExamsService examsService = ServiceFactory.getInstance().getExamsService();
+//        IRatingService ratingService= ServiceFactory.getInstance().getRatingService();
+//        ISubjectService subjectService = ServiceFactory.getInstance().getSubjectService();
+        DaoExams daoExams = DaoFactory.getInstance().getDaoExams();
+
+//        System.out.println(examsService.create( 1, 12));
+
+
     }
 
 }

@@ -2,7 +2,6 @@ package dao;
 
 import factory.PropertyHandlerFactory;
 import model.Exams;
-import model.User;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import properties.QueryPropertyHandler;
@@ -39,12 +38,12 @@ public class DaoExams implements IDao<Exams> {
     }
 
 
-    public boolean create(int Subject_id, int User_id) {
+    public boolean create(int Subjects_id, int User_id) {
 
         try (ConnectionProxy connection = TransactionManager.getInstance().getConnection();
              PreparedStatement preparedStatement = connection.createPreparedStatement(property.get("exams_create"))) {
 
-            preparedStatement.setInt(1, Subject_id);
+            preparedStatement.setInt(1, Subjects_id);
             preparedStatement.setInt(2, User_id);
             preparedStatement.executeUpdate();
 

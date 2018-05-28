@@ -6,7 +6,7 @@ import model.Subject;
 
 import java.util.List;
 
-public class SubjectService implements IService {
+public class SubjectService implements ISubjectService {
     private final DaoSubject daoSubject = DaoFactory.getInstance().getDaoSubject();
 
     public Subject get(int id) {

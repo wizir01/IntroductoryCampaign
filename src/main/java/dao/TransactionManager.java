@@ -21,7 +21,7 @@ public class TransactionManager {
     private TransactionManager() {
     }
 
-    private ConnectionProxy createConnection() {
+    private ConnectionProxy provideConnection() {
 
         if (Connection.get() != null) {
             return Connection.get();
@@ -33,7 +33,7 @@ public class TransactionManager {
         try {
             Connection.get().setAutoCommit(false);
         } catch (SQLException e) {
-            LOGGER.error("Some problem was occurred with Data base" + e);
+            LOGGER.error("Some problem was occurred with Transaction" + e);
         }
 
         return Connection.get();
@@ -44,7 +44,7 @@ public class TransactionManager {
         if (Connection.get() == null) {
             return new ConnectionProxy(dataSource.getConnection());
         } else {
-            return createConnection();
+            return provideConnection();
         }
 
     }
@@ -54,7 +54,7 @@ public class TransactionManager {
         if (Connection.get() != null) {
             throw new IllegalStateException();
         }
-        createConnection();
+        provideConnection();
     }
 
     public void commit() {

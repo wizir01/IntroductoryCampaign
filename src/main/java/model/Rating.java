@@ -11,6 +11,12 @@ public class Rating {
     public Rating() {
     }
 
+    public Rating(int userId, int departmentId, int rating) {
+        this.userId = userId;
+        this.departmentId = departmentId;
+        this.rating = rating;
+    }
+
     public Rating(int id, int userId, int departmentId, int rating) {
         this.id = id;
         this.userId = userId;

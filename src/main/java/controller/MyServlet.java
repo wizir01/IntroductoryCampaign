@@ -15,7 +15,7 @@ public class MyServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         HttpSession session = req.getSession();
         boolean logginStatus = session.getAttribute("user") != null;
-        if (!logginStatus && "RegistrationCommand".equals(req.getParameter("command"))) {
+        if ("RegistrationCommand".equals(req.getParameter("command")) && !logginStatus) {
             req.getRequestDispatcher("/view/registration.jsp").forward(req, resp);
         }
         if (!logginStatus) {

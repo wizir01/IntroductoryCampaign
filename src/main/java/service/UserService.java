@@ -6,15 +6,15 @@ import model.User;
 
 import java.util.List;
 
-public class UserService implements IService {
+public class UserService implements IUserService {
     DaoUser daoUser = DaoFactory.getInstance().getDaoUser();
 
     public List<User> getAll() {
         return daoUser.getAll();
     }
 
-    public void create(User user) {
-        daoUser.create(user);
+    public boolean create(User user) {
+        return daoUser.create(user);
     }
 
     public User get(int id) {

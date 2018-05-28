@@ -7,17 +7,25 @@
 <body>
 <%@include file="menu.jsp" %>
 
-<h2>Виберіть предмети</h2>
-<ul>
-    <c:forEach items="${requestScope.subjects}" var="subject">
-        <li>
-            <p><c:out value="${subject.name}"/></p>
-            <input type="checkbox" name="subject_id" value="${subject}">
-        </li>
-    </c:forEach>
-</ul>
-<%--<input type="hidden" name="command" value="ShowSubjectsCommand">--%>
-<%--<button type="submit">Show Subjects</button>--%>
+<h2>Select subjects</h2>
+<p>${requestScope.noAvailable}</p>
+<form method="post" action="/">
+    <ul>
+        <c:forEach var="subject" items="${requestScope.subjects}">
+            <li>
+                <p><c:out value="${subject.name}"/></p>
 
+                <input type="checkbox" name="subjectId" value="${subject.id}">
+
+            </li>
+        </c:forEach>
+    </ul>
+
+    <p>
+        <input type="hidden" name="command" value="SelectSubjectsCommand">
+        <input type="submit" name="button" value="Submit">
+    </p>
+    <p>${requestScope.emptyCheckbox}</p>
+</form>
 </body>
 </html>

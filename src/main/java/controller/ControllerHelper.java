@@ -24,6 +24,15 @@ public class ControllerHelper {
         commandMap.put("ShowSubjectCommand", new ShowSubjectsCommand());
         commandMap.put("SelectSubjectsCommand", new SelectSubjectsCommand());
         commandMap.put("MainCommand", new MainCommand());
+        commandMap.put("ShowExamsCommand", new ShowExamsCommand());
+        commandMap.put("SetMarkCommand", new SetMarkCommand());
+        commandMap.put("ShowUniversitiesCommand", new ShowUniversitiesCommand());
+        commandMap.put("ShowDepartmentsCommand", new ShowDepartmentsCommand());
+        commandMap.put("SelectDepartmentCommand", new SelectDepartmentCommand());
+        commandMap.put("RatingCommand", new RatingCommand());
+        commandMap.put("ShowRatingCommand", new ShowRatingCommand());
+        commandMap.put("SendNotificationsCommand", new SendNotificationsCommand());
+        commandMap.put("LocalizationCommand", new LocalizationCommand());
     }
 
     public ICommand getCommand(HttpServletRequest request) {

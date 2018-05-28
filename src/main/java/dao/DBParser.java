@@ -26,7 +26,7 @@ public class DBParser {
                 users.add(user);
             }
         }catch (SQLException e) {
-            throw new SQLException("Some problem was occurred while parsing User + \n" + e);
+            throw new SQLException("Some problem was occurred while parsing User \n" + e);
         }
         return users;
     }
@@ -42,7 +42,7 @@ public class DBParser {
                 universities.add(university);
             }
         }catch (SQLException e) {
-            throw new SQLException("Some problem was occurred while parsing University + \n" + e);
+            throw new SQLException("Some problem was occurred while parsing University \n" + e);
         }
         return universities;
     }
@@ -58,7 +58,7 @@ public class DBParser {
                 subjects.add(subject);
             }
         }catch (SQLException e) {
-            throw new SQLException("Some problem was occurred while parsing Subject + \n" + e);
+            throw new SQLException("Some problem was occurred while parsing Subject \n" + e);
         }
         return subjects;
     }
@@ -74,7 +74,7 @@ public class DBParser {
                 specialities.add(speciality);
             }
         }catch (SQLException e) {
-            throw new SQLException("Some problem was occurred while parsing Speciality + \n" + e);
+            throw new SQLException("Some problem was occurred while parsing Speciality \n" + e);
         }
         return specialities;
     }
@@ -92,7 +92,7 @@ public class DBParser {
                 exams.add(exam);
             }
         }catch (SQLException e) {
-            throw new SQLException("Some problem was occurred while parsing Speciality + \n" + e);
+            throw new SQLException("Some problem was occurred while parsing Exams \n" + e);
         }
         return exams;
     }
@@ -110,7 +110,7 @@ public class DBParser {
                 departments.add(department);
             }
         }catch (SQLException e) {
-            throw new SQLException("Some problem was occurred while parsing Speciality + \n" + e);
+            throw new SQLException("Some problem was occurred while parsing Department \n" + e);
         }
         return departments;
     }
@@ -122,12 +122,12 @@ public class DBParser {
             while (resultSet.next()) {
                 int id = resultSet.getInt("DepReq_id");
                 int Department_id = resultSet.getInt("Department_id");
-                int Subject_id = resultSet.getInt("Subject_id");
+                int Subject_id = resultSet.getInt("Subjects_id");
                 DepartmentRequirement departmentRequirement = new DepartmentRequirement(id, Department_id, Subject_id);
                 departmentRequirements.add(departmentRequirement);
             }
         }catch (SQLException e) {
-            throw new SQLException("Some problem was occurred while parsing Speciality + \n" + e);
+            throw new SQLException("Some problem was occurred while parsing DepartmentRequirement \n" + e);
         }
         return departmentRequirements;
     }
@@ -146,7 +146,7 @@ public class DBParser {
             }
 
         }catch (SQLException e) {
-            throw  new SQLException("Some problem was occurred while parsing Speciality + \n" + e);
+            throw  new SQLException("Some problem was occurred while parsing Rating \n" + e);
         }
         return ratings;
     }

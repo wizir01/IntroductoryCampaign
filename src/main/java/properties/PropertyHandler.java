@@ -10,4 +10,8 @@ abstract class PropertyHandler {
     }
 
     public abstract String get(String key);
+
+    public Properties get() {
+        return properties;
+    }
 }

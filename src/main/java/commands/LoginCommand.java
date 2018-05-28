@@ -2,7 +2,7 @@ package commands;
 
 import factory.ServiceFactory;
 import model.User;
-import service.UserService;
+import service.IUserService;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -15,7 +15,7 @@ public class LoginCommand implements ICommand {
     public String execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String email = request.getParameter("email");
         String password = request.getParameter("password");
-        UserService userService  = ServiceFactory.getInstance().getUserService();
+        IUserService userService  = ServiceFactory.getInstance().getUserService();
         User user = userService.getByEmail(email);
 
         if (user == null || "".equals(email)) {

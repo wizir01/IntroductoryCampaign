@@ -59,6 +59,25 @@ public class DaoDepartment implements IDao<Department> {
         return true;
     }
 
+    public boolean updateStudyPlacesNumber(int departmentId, int studyPlacesNumber) {
+        if (studyPlacesNumber < 0) {
+            throw new IllegalArgumentException();
+        }
+
+        try(ConnectionProxy connection = TransactionManager.getInstance().getConnection();
+        PreparedStatement preparedStatement = connection.createPreparedStatement(property.get("department_updateStudyPlacesNumber"))) {
+
+            preparedStatement.setInt(1, studyPlacesNumber);
+            preparedStatement.setInt(2, departmentId);
+            preparedStatement.executeUpdate();
+
+        }catch (SQLException e) {
+            LOGGER.error("Some problem was ocured while working with database \n" + e);
+            return false;
+        }
+        return true;
+    }
+
     @Override
     public Department get(int id) {
         Department department = null;

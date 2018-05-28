@@ -7,14 +7,14 @@
 <body>
 <h1>Log In</h1>
 
-<form method="post" action="">
+<form method="post" action="/">
 
-    <label><input type="text" name="email"></label>email<br>
+    <label><input type="email" required maxlength="60" name="email"></label>email<br>
 
-    <label><input type="text" name="password"></label>password<br>
+    <label><input type="password" required maxlength="60" name="password"></label>password<br>
 
     <input type="hidden" name="command" value="LoginCommand">
-    <button type="submit">Login</button>
+    <input type="submit" name="button" value="Submit">
 
 </form>
 
