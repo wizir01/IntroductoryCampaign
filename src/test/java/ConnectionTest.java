@@ -38,10 +38,10 @@ public class ConnectionTest {
 
     public static void main(String[] args) {
 //        IDepartmentRequirementService departmentRequirementService = ServiceFactory.getInstance().getDepartmentRequirementService();
-        IExamsService examsService = ServiceFactory.getInstance().getExamsService();
+//        IExamsService examsService = ServiceFactory.getInstance().getExamsService();
 //        IRatingService ratingService= ServiceFactory.getInstance().getRatingService();
 //        ISubjectService subjectService = ServiceFactory.getInstance().getSubjectService();
-        DaoExams daoExams = DaoFactory.getInstance().getDaoExams();
+//        DaoExams daoExams = DaoFactory.getInstance().getDaoExams();
 
 //        System.out.println(examsService.create( 1, 12));
 
