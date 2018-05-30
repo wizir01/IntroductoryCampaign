@@ -78,9 +78,9 @@
 ### Запуск 
 
 Из командной строки:
-1. Открыть корневую директорию проекта
-2. Выполнить команду "mvn org.apache.tomcat.maven:tomcat7-maven-plugin:2.2:run-war-only -f pom.xml"
-3. Запущенное приложение должно быть доступно по адресу http://localhost:8080
+1. Поместить упакованый WAR в папку webapps корневого каталога Tomcat.
+2. Запустить Tomcat Serrver.
+3. Запущенное приложение должно быть доступно по адресу http://localhost:8080/IntroductoryCampaign-1.0-SNAPSHOT/
 
 ### Автор
 
